@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect with Haneef</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            transition: all 0.3s ease;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            position: relative;
+            z-index: 100;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            margin-right: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .website-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+            background: linear-gradient(to right, #6e8efb, #a777e3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .admin-login {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .admin-login:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .banner {
+            background: linear-gradient(135deg, rgba(110, 142, 251, 0.1), rgba(167, 119, 227, 0.1));
+            border-radius: 20px;
+            padding: 40px;
+            margin: 30px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 1s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+            animation: rotate 15s linear infinite;
+            z-index: 0;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .banner-content {
+            position: relative;
+            z-index: 1;
+            flex: 1;
+        }
+        
+        .banner h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #6e8efb, #a777e3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .banner p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #555;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #6e8efb;
+            font-size: 18px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            color: #a777e3;
+        }
+        
+        .banner-image {
+            position: relative;
+            z-index: 1;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .banner-image img {
+            max-width: 100%;
+            height: auto;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 10px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn:active {
+            transform: translateY(1px);
+        }
+        
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0));
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+        
+        .btn:hover::after {
+            transform: translateX(100%);
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .modal-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            transform: translateY(-20px);
+            opacity: 0;
+            animation: modalOpen 0.4s ease forwards;
+        }
+        
+        @keyframes modalOpen {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #888;
+            transition: color 0.3s ease;
+        }
+        
+        .close-modal:hover {
+            color: #333;
+        }
+        
+        .modal h2 {
+            margin-bottom: 20px;
+            color: #6e8efb;
+            text-align: center;
+        }
+        
+        .need-for-work {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        .need-for-work h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #6e8efb;
+        }
+        
+        .need-for-work p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #555;
+        }
+        
+        .response-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+        
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: #6e8efb;
+            box-shadow: 0 0 0 3px rgba(110, 142, 251, 0.2);
+            outline: none;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+        }
+        
+        .admin-panel {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 20px;
+        }
+        
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .admin-header h2 {
+            color: #6e8efb;
+        }
+        
+        .logout-btn {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .logout-btn:hover {
+            background: #ff5252;
+        }
+        
+        .submissions-list {
+            margin-top: 20px;
+        }
+        
+        .submission-item {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .submission-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .submission-item p {
+            margin: 5px 0;
+        }
+        
+        .submission-item strong {
+            color: #6e8efb;
+        }
+        
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #6e8efb;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            z-index: 1100;
+            display: none;
+            animation: slideIn 0.3s ease forwards;
+        }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        .login-form {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .login-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #6e8efb;
+        }
+        
+        .login-form input {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        
+        .login-form button {
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+        }
+        
+        .thank-you {
+            text-align: center;
+            padding: 50px 20px;
+            animation: fadeIn 1s ease;
+        }
+        
+        .thank-you h2 {
+            color: #6e8efb;
+            margin-bottom: 20px;
+        }
+        
+        .thank-you p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        
+        .success-message {
+            text-align: center;
+            padding: 20px;
+            color: #4CAF50;
+            font-weight: bold;
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .banner {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .banner-content {
+                margin-bottom: 30px;
+            }
+            
+            .social-icons {
+                justify-content: center;
+            }
+            
+            .response-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .website-name {
+                font-size: 20px;
+            }
+            
+            .banner h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="main-content">
+        <header>
+            <div class="logo-container">
+                <div class="logo">H</div>
+                <div class="website-name">Connect with Haneef</div>
+            </div>
+            <button class="admin-login" id="admin-login-btn">Admin Login</button>
+        </header>
+        
+        <section class="banner">
+            <div class="banner-content">
+                <h1>Hi, I'm Haneef</h1>
+                <p>Hi, I'm Haneef — a passionate web developer focused on building fast, interactive, and user-friendly websites and applications. From front-end design to back-end functionality, I bring digital ideas to life with clean code and creativity.</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/marketingby_haneef?igsh=MTQ2dDdsNWpndGpkMA==" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/7006505391" class="social-icon" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+                <button class="btn" id="need-for-work-btn">Need for Work</button>
+            </div>
+            <div class="banner-image">
+                <img src="https://xclcamps.com/wp-content/uploads/coding-difference-1.jpg" alt="Haneef's Work">
+            </div>
+        </section>
+    </div>
+    
+    <div class="modal" id="need-for-work-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-need-modal">&times;</span>
+            <div class="need-for-work">
+                <h2>Connect with Haneef</h2>
+                <p>Are you looking for a job?</p>
+                <div class="response-buttons">
+                    <button class="btn" id="yes-btn">Yes</button>
+                    <button class="btn" id="no-btn">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal" id="job-form-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-job-modal">&times;</span>
+            <h2>Fill the Form</h2>
+            <form id="job-application-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="parentage">Parentage</label>
+                    <input type="text" id="parentage" name="parentage" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="skill">Any Skill</label>
+                    <input type="text" id="skill" name="skill" required>
+                </div>
+                <div class="form-group">
+                    <label for="whatsapp">WhatsApp Number</label>
+                    <input type="tel" id="whatsapp" name="whatsapp" required>
+                </div>
+                <button type="submit" class="btn submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="modal" id="thank-you-modal">
+        <div class="modal-content">
+            <div class="thank-you">
+                <h2>Thank you for visiting!</h2>
+                <p>We appreciate you taking the time to check out our services.</p>
+                <button class="btn" id="close-thank-you">Close</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal" id="success-modal">
+        <div class="modal-content">
+            <div class="thank-you">
+                <h2>Thank You!</h2>
+                <p>Your form has been submitted successfully.</p>
+                <button class="btn" id="close-success">Close</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal" id="admin-login-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-admin-login">&times;</span>
+            <div class="login-form">
+                <h2>Admin Login</h2>
+                <input type="password" id="admin-password" placeholder="Enter Password" required>
+                <button class="btn" id="login-btn">Login</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="admin-panel" id="admin-panel">
+        <div class="admin-header">
+            <h2>Admin Panel - Form Submissions</h2>
+            <button class="logout-btn" id="logout-btn">Logout</button>
+        </div>
+        <div class="submissions-list" id="submissions-list">
+            <p>No submissions yet.</p>
+        </div>
+    </div>
+    
+    <div class="notification" id="notification">
+        New form submission received!
+    </div>
+
+    <script>
+        // DOM Elements
+        const needForWorkBtn = document.getElementById('need-for-work-btn');
+        const needForWorkModal = document.getElementById('need-for-work-modal');
+        const closeNeedModal = document.getElementById('close-need-modal');
+        const yesBtn = document.getElementById('yes-btn');
+        const noBtn = document.getElementById('no-btn');
+        const jobFormModal = document.getElementById('job-form-modal');
+        const closeJobModal = document.getElementById('close-job-modal');
+        const jobApplicationForm = document.getElementById('job-application-form');
+        const thankYouModal = document.getElementById('thank-you-modal');
+        const closeThankYou = document.getElementById('close-thank-you');
+        const successModal = document.getElementById('success-modal');
+        const closeSuccess = document.getElementById('close-success');
+        const adminLoginBtn = document.getElementById('admin-login-btn');
+        const adminLoginModal = document.getElementById('admin-login-modal');
+        const closeAdminLogin = document.getElementById('close-admin-login');
+        const loginBtn = document.getElementById('login-btn');
+        const adminPassword = document.getElementById('admin-password');
+        const adminPanel = document.getElementById('admin-panel');
+        const logoutBtn = document.getElementById('logout-btn');
+        const submissionsList = document.getElementById('submissions-list');
+        const notification = document.getElementById('notification');
+        const mainContent = document.getElementById('main-content');
+        
+        // Set your admin password here
+        const ADMIN_PASSWORD = "haneef@website"; // Change this to your desired password
+        
+        // Store form submissions
+        let formSubmissions = JSON.parse(localStorage.getItem('formSubmissions')) || [];
+        
+        // Update submissions list in admin panel
+        function updateSubmissionsList() {
+            if (formSubmissions.length === 0) {
+                submissionsList.innerHTML = '<p>No submissions yet.</p>';
+                return;
+            }
+            
+            submissionsList.innerHTML = '';
+            formSubmissions.forEach((submission, index) => {
+                const submissionItem = document.createElement('div');
+                submissionItem.className = 'submission-item';
+                submissionItem.innerHTML = `
+                    <p><strong>Name:</strong> ${submission.name}</p>
+                    <p><strong>Parentage:</strong> ${submission.parentage}</p>
+                    <p><strong>Phone:</strong> ${submission.phone}</p>
+                    <p><strong>Email:</strong> ${submission.email}</p>
+                    <p><strong>Skill:</strong> ${submission.skill}</p>
+                    <p><strong>WhatsApp:</strong> ${submission.whatsapp}</p>
+                    <p><strong>Date:</strong> ${new Date(submission.timestamp).toLocaleString()}</p>
+                `;
+                submissionsList.appendChild(submissionItem);
+            });
+        }
+        
+        // Show notification
+        function showNotification() {
+            notification.style.display = 'block';
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 3000);
+        }
+        
+        // Event Listeners
+        needForWorkBtn.addEventListener('click', () => {
+            needForWorkModal.style.display = 'flex';
+        });
+        
+        closeNeedModal.addEventListener('click', () => {
+            needForWorkModal.style.display = 'none';
+        });
+        
+        yesBtn.addEventListener('click', () => {
+            needForWorkModal.style.display = 'none';
+            jobFormModal.style.display = 'flex';
+        });
+        
+        noBtn.addEventListener('click', () => {
+            needForWorkModal.style.display = 'none';
+            thankYouModal.style.display = 'flex';
+        });
+        
+        closeJobModal.addEventListener('click', () => {
+            jobFormModal.style.display = 'none';
+        });
+        
+        closeThankYou.addEventListener('click', () => {
+            thankYouModal.style.display = 'none';
+        });
+        
+        closeSuccess.addEventListener('click', () => {
+            successModal.style.display = 'none';
+        });
+        
+        jobApplicationForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                parentage: document.getElementById('parentage').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                skill: document.getElementById('skill').value,
+                whatsapp: document.getElementById('whatsapp').value,
+                timestamp: new Date().getTime()
+            };
+            
+            formSubmissions.push(formData);
+            localStorage.setItem('formSubmissions', JSON.stringify(formSubmissions));
+            
+            // Reset form
+            jobApplicationForm.reset();
+            
+            // Close job form modal
+            jobFormModal.style.display = 'none';
+            
+            // Show success message
+            successModal.style.display = 'flex';
+            
+            // Show notification in admin panel if logged in
+            if (adminPanel.style.display === 'block') {
+                showNotification();
+                updateSubmissionsList();
+            }
+        });
+        
+        adminLoginBtn.addEventListener('click', () => {
+            adminLoginModal.style.display = 'flex';
+        });
+        
+        closeAdminLogin.addEventListener('click', () => {
+            adminLoginModal.style.display = 'none';
+        });
+        
+        loginBtn.addEventListener('click', () => {
+            if (adminPassword.value === ADMIN_PASSWORD) {
+                adminLoginModal.style.display = 'none';
+                mainContent.style.display = 'none';
+                adminPanel.style.display = 'block';
+                updateSubmissionsList();
+            } else {
+                alert('Incorrect password!');
+            }
+        });
+        
+        logoutBtn.addEventListener('click', () => {
+            adminPanel.style.display = 'none';
+            mainContent.style.display = 'block';
+            adminPassword.value = '';
+        });
+        
+        // Close modals when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === needForWorkModal) {
+                needForWorkModal.style.display = 'none';
+            }
+            if (e.target === jobFormModal) {
+                jobFormModal.style.display = 'none';
+            }
+            if (e.target === thankYouModal) {
+                thankYouModal.style.display = 'none';
+            }
+            if (e.target === successModal) {
+                successModal.style.display = 'none';
+            }
+            if (e.target === adminLoginModal) {
+                adminLoginModal.style.display = 'none';
+            }
+        });
+        
+        // Initialize submissions list
+        updateSubmissionsList();
+    </script>
+</body>
+</html>
